@@ -1,0 +1,13 @@
+body {
+	// background-color:#fff !important;
+	
+}
+
+.navbar2 { background-color:#fff !important;
+text-align: left;
+color: #666666;
+font-size: 20px;
+border-bottom: 5px solid #666666;
+}
+
+.navbar-nav {height:100%;}

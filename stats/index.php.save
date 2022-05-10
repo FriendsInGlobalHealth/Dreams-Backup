@@ -1,0 +1,37 @@
+<?php
+$link = mysqli_connect("127.0.0.1", "my_user", "my_password", "my_db");
+
+if (!$link) {
+    echo "Error: Unable to connect to MySQL." . PHP_EOL;
+    echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
+    echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
+    exit;
+}
+
+echo "Success: A proper connection to MySQL was made! The my_db database is great." . PHP_EOL;
+echo "Host information: " . mysqli_get_host_info($link) . PHP_EOL;
+
+mysqli_close();
+?>
+<?php 
+
+
+echo "LISTA";
+
+$selProv="SELECT * FROM hs_hr_province WHERE status=1";
+$provs=mysqli_query($conn,$selProv);
+
+ while($prov = mysqli_fetch_array($provs)) {
+ $id=$prov['id'];
+        echo '<font style="text-transform: uppercase;color: blue;"><b>'.$i.' - '.utf8_encode($prov['province_name']).'</b></font><br>'; 
+        $selDist="SELECT * FROM hs_hr_district WHERE province_code=$id";
+$dists=mysqli_query($conn,$selDist); 
+         while($dist = mysqli_fetch_array($dists)) {
+         
+        $distr=$dist['district_code'];
+
+}
+}
+
+
+?>
